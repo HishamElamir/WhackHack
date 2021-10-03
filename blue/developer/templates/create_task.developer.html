@@ -1,0 +1,110 @@
+{% extends "main.developer.html" %}
+{% block title %} Create Ticket {% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="row-lg-6">
+    <div class="card">
+        <div class="card-header">
+            <strong>Create Ticket</strong> with your issue
+        </div>
+        <div class="card-body card-block">
+            <form action="/developer/create-ticket/" method="POST" class="form-horizontal">
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="disabled-input" class=" form-control-label">Disabled Input</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="disabled-input" name="username"
+                               placeholder="{{this_user['username']}}" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="text-input" class=" form-control-label">Ticket Title</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="text-input" name="title" placeholder="Text" class="form-control">
+                        <small class="form-text text-muted">Short title for the ticket</small>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="email-input" class=" form-control-label">Email</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="email" id="email-input" name="email" placeholder="Enter Email"
+                               value="{{this_user['email']}}" class="form-control">
+                        <small class="help-block form-text">Email for issue owner (you/others)</small>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="textarea-input" class=" form-control-label">Ticket Description</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <textarea name="description" id="textarea-input" rows="9" placeholder="Content..."
+                                  class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Category</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select name="category" id="select" class="form-control">
+                            <option value="0">Please select</option>
+                            <option value="password-issues">Password Issues</option>
+                            <option value="access-issues">Access Issues</option>
+                            <option value="hardware-issues">Hardware Issues</option>
+                            <option value="software-issues">Software Issues</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <button name="urgency/impact" type="button" id="impact-urgency-btn"
+                            class="btn btn-lg btn-info btn-block">&nbsp;
+                        <span id="payment-button-amount">Click to Fill Impact & Urgency</span>
+                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                    </button>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Urgency</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="email" id="urgency-input" name="email" placeholder=""
+                               value="--" class="form-control" disabled="">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Impact</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="email" id="impact-input" name="email" placeholder=""
+                               value="--" class="form-control" disabled="">
+                        <small class="help-block form-text" id="score-input"></small>
+                    </div>
+                </div>
+
+
+                <button name="submit" type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submit
+                </button>
+                <button type="reset" class="btn btn-danger btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+            </form>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

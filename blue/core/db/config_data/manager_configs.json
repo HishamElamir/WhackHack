@@ -1,0 +1,8 @@
+{
+    "specializations": [
+        "backend", "frontend", "platform", "testing"
+    ],
+    "categories": ["Support/ProductionIssue", "Support/UAT", "POC", "Support/PPT", "Support/Testing", "Others(Please Specift)", "Development", "Researching"],
+    "products": ["More Plus", "Selfcare", "iEtisalat", "DSS", "SPOC App", "Etisalat Sports", "My Etisalat", "tTrack"],
+    "Projects": ["DSS revamp", "Account CVM", "ISP to Siebel", "login enhancement", "Recognition", "Airtime", "SFA", "Basic (other)", "daily tips", "Download & Get", "Digital incentive", "Gated Communities", "parental control", "Dial Addons", "Etisalat Sports", "My Etisalat", "Sallefny Monetary", "AddAccount"]
+}

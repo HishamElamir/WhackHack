@@ -1,0 +1,62 @@
+{% extends "main.manager.html" %}
+{% block title %} Create Ticket {% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="row-lg-6">
+    <div class="card">
+        <div class="card-header">
+            <strong>Assign Ticket</strong> to whom gonna work on it
+        </div>
+        <div class="card-body card-block">
+            <form action="/manager/assign-ticket/" method="POST" class="form-horizontal">
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="disabled-input" class=" form-control-label">Disabled Input</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="disabled-input" name="username" placeholder="{{this_user['username']}}"
+                               value="{{this_user['username']}}" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Category</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select name="ticket" id="select-ticket" class="form-control">
+                            {% for task in task_list %}
+                            <option value="{{ task['_id'] }}">{{ task['description'] }} / {{ task['category'] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Category</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <select name="worker" id="select-worker" class="form-control">
+                            {% for dev in dev_list %}
+                            <option value="{{ dev['_id'] }}">{{ dev['username'] }} / {{ dev['email'] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <button name="submit" type="submit" class="btn btn-primary btn-sm">
+                    <i class="fa fa-dot-circle-o"></i> Submit
+                </button>
+                <button type="reset" class="btn btn-danger btn-sm">
+                    <i class="fa fa-ban"></i> Reset
+                </button>
+            </form>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

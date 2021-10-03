@@ -1,0 +1,45 @@
+{% extends "main.manager.html" %}
+{% block title %} Dashboard {% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="au-card m-b-30">
+            <div class="au-card-inner">
+                <h3 class="title-2 m-b-40">Ticket Commits</h3>
+                <canvas id="developer-ticket-commits" data-geocode='{{ days|tojson }}'></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="au-card m-b-30">
+            <div class="au-card-inner">
+                <h3 class="title-2 m-b-40">Types Bar</h3>
+                <canvas id="developer-tickets-types-bar" data-geocode='{{ types|tojson }}'></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="au-card m-b-30">
+            <div class="au-card-inner">
+                <h3 class="title-2 m-b-40">Categories Doughnut</h3>
+                <canvas id="developer-categories-doughnut" data-geocode='{{ categories|tojson }}'></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="copyright">
+            <p>Copyright © 2020 HELab. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Dashboard | tTrack</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="{{ url_for('static', filename='manager/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="{{ url_for('static', filename='manager/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="{{ url_for('static', filename='manager/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="{{ url_for('static', filename='manager/plugins/morrisjs/morris.css') }}" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="{{ url_for('static', filename='manager/css/style.css') }}" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="{{ url_for('static', filename='manager/css/themes/all-themes.css') }}" rel="stylesheet" />
+    
+    
+    <script src="https://raw.githubusercontent.com/google/palette.js/master/palette.js"></script>
+    {% endblock %}
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">tTrack - Monitor Dashboard</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+        
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Tasks -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">flag</i>
+                            <span class="label-count">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">TASKS</li>
+                            <li class="body">
+                                <ul class="menu tasks">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Footer display issue
+                                                <small>32%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Make new buttons
+                                                <small>45%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Create new dashboard
+                                                <small>54%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Solve transition issue
+                                                <small>65%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Answer GitHub questions
+                                                <small>92%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='manager/images/user.png') }}" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ this_user['username'] }}</div>
+                    <div class="email">{{ this_user['email'] }}</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/sign/out/"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active">
+                        <a href="/manager/">
+                            <i class="material-icons">home</i>
+                            <span>Home DashBoard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/manager/create-task/">
+                            <i class="material-icons">text_fields</i>
+                            <span>Create Task</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/manager/assign-task/">
+                            <i class="material-icons">layers</i>
+                            <span>Assign Task</span>
+                        </a>
+                    </li>
+                </ul>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+            </div>
+        </aside>
+        <!-- #END# Left Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <!-- Widgets -->
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">playlist_add_check</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">DEVELOPMENT TASKS</div>
+                            <div class="number count-to" data-from="0" data-to="{{ dev_tasks }}" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-cyan hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">help</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">TASK LOGS</div>
+                            <div class="number count-to" data-from="0" data-to="{{ task_log_count }}" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-light-green hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">forum</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">TOTAL HOURS</div>
+                            <div class="number count-to" data-from="0" data-to="{{ logs_hours }}" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">person_add</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">WORKING DEVS</div>
+                            <div class="number count-to" data-from="0" data-to="{{ dev_count }}" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Widgets -->
+
+
+            <div class="row clearfix">
+                <!-- Task Info -->
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="card">
+                        <div class="header">
+                            <h2>TASK CREATED BY YOU</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-hover dashboard-task-infos">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Task</th>
+                                            <th>Category</th>
+                                            <th>Product</th>
+                                            <th>Type</th>
+                                            <th>Est. Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for task in task_list %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ task['desc'] }}</td>
+                                            <td><span class="label bg-green">{{ task['category'] }}</span></td>
+                                            <td><span class="label bg-green">{{ task['product'] }}</span></td>
+                                            <td><span class="label bg-green">{{ task['specialization'] }}</span></td>
+                                            <td>{{ task['estimated_time'] }}</td>
+                                            <!--
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
+                                                </div>
+                                            </td>-->
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Task Info -->
+                <!-- Browser Usage -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Hours Distribution</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <canvas id="pie_chart" height="250"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Browser Usage -->
+
+
+            <div class="row clearfix">
+                <!-- Task Info -->
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="card">
+                        <div class="header">
+                            <h2>TASKs WAITING</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-hover dashboard-task-infos">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Task</th>
+                                            <th>Category</th>
+                                            <th>Product</th>
+                                            <th>Type</th>
+                                            <th>Estimated Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for task in task_waiting %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ task['desc'] }}</td>
+                                            <td><span class="label bg-green">{{ task['category'] }}</span></td>
+                                            <td><span class="label bg-green">{{ task['product'] }}</span></td>
+                                            <td><span class="label bg-green">{{ task['specialization'] }}</span></td>
+                                            <td>{{ task['estimated_time'] }}</td>
+                                            <!--
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
+                                                </div>
+                                            </td>-->
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Task Info -->
+                <!-- Browser Usage -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Hours Distribution</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <canvas id="dev_hours_pie_chart" height="350"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Browser Usage -->
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ChartJs -->
+    <script src="{{ url_for('static', filename='manager/plugins/chartjs/Chart.bundle.js') }}"></script>
+    <script>
+
+window.chartColors = {
+    red: 'rgb(255, 99, 132)',
+    orange: 'rgb(255, 159, 64)',
+    yellow: 'rgb(255, 205, 86)',
+    green: 'rgb(75, 192, 192)',
+    blue: 'rgb(54, 162, 235)',
+    purple: 'rgb(153, 102, 255)',
+    grey: 'rgb(201, 203, 207)'
+};
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+var genPallete = function(length) {
+    
+    var p = [];
+    for (var i = 0; i < length; i++) {
+        p.push("rgb(" + getRandomInt(255) + ", " + getRandomInt(255) + ", " + getRandomInt(255) + ")")
+    }
+    console.log(p);
+    return p;
+};
+
+// TASK CREATED DISTRIBUTION
+data = [], labels = [];
+
+{% for i in tasks_hours_per_type %}
+    data.push('{{ i }}')
+{% endfor %}
+{% for i in tasks_types %}
+    labels.push('{{ i }}')
+{% endfor %}
+
+var ctx = document.getElementById('pie_chart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: '# of hours per task types',
+            data: data,
+            backgroundColor: genPallete(labels.length),
+            borderWidth: 1,
+            fillColor: "rgba(220,220,220,0.5)", 
+            strokeColor: "rgba(220,220,220,0.8)", 
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)"
+        }]
+    },
+    options: {
+        legend: {
+            display: false,
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+// DEVELOPER CHART
+console
+line_labels = []
+line_cats = []
+{% for i in devs_stat %}
+    line_labels.push("{{ i['username'] }}")
+{% endfor %}
+
+{% for j in dist_cat %}
+    d = {}
+    d['label'] = "{{j}}"
+
+    {% if j == "backend" %}
+        d["backgroundColor"] = window.chartColors.red;
+    {% elif j == "Front End" %}
+        d["backgroundColor"] = window.chartColors.green;
+    {% endif %}
+
+    d['data'] = []
+    {% for i in devs_stat %}
+        {% if j in i %}
+            d['data'].push({{ i[j] }});
+        {% else %}
+            d['data'].push(0);
+        {% endif %}
+    {% endfor %}
+    line_cats.push(d);
+{% endfor %}
+
+console.log(line_cats);
+
+
+
+var randomScalingFactor = function() {
+	return Math.round(Math.random() * 100);
+};
+
+		var config = {
+			type: 'line',
+			data: {
+				labels: line_labels,
+				datasets: line_cats,
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					text: 'Chart with Multiline Labels'
+				},
+			}
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('dev_hours_pie_chart').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};
+
+
+
+    </script>
+
+    <!-- Jquery Core Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/bootstrap/js/bootstrap.js') }}"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/node-waves/waves.js') }}"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/jquery-countto/jquery.countTo.js') }}"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/raphael/raphael.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='manager/plugins/morrisjs/morris.js') }}"></script>
+
+
+    <!-- Flot Charts Plugin Js -->
+    <!--
+    <script src="{{ url_for('static', filename='manager/plugins/flot-charts/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename='manager/plugins/flot-charts/jquery.flot.resize.js') }}"></script>
+    <script src="{{ url_for('static', filename='manager/plugins/flot-charts/jquery.flot.pie.js') }}"></script>
+    <script src="{{ url_for('static', filename='manager/plugins/flot-charts/jquery.flot.categories.js') }}"></script>
+    <script src="{{ url_for('static', filename='manager/plugins/flot-charts/jquery.flot.time.js') }}"></script>
+    -->
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="{{ url_for('static', filename='manager/plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>
+
+    <!-- Custom Js -->
+    <script src="{{ url_for('static', filename='manager/js/admin.js') }}"></script>
+    <script src="{{ url_for('static', filename='manager/js/pages/index.js') }}"></script>
+
+    <!-- Demo Js -->
+    <script src="{{ url_for('static', filename='manager/js/demo.js') }}"></script>
+</body>
+
+</html>

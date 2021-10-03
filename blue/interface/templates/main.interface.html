@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HE-Labs</title>
+</head>
+<body>
+    {% if user_info['role'] == 'developer' %}
+        <a href="/developer/">Fill Today's Form</a>        
+    {% elif user_info['role'] == 'manager' %}
+        <a href="/manager/">Go To Dashboard</a>        
+    {% endif %}
+</body>
+</html>

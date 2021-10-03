@@ -1,0 +1,133 @@
+{% extends "main.manager.html" %}
+{% block title %} Create Ticket {% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<div class="row-lg-6">
+    <div class="card">
+        <div class="card-header">
+            <strong>Create Ticket</strong> with your issue
+        </div>
+        <div class="card-body card-block">
+            <form action="/manager/create-ticket/" method="POST" class="form-horizontal">
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="disabled-input" class=" form-control-label">Disabled Input</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="disabled-input" name="username"
+                               placeholder="{{this_user['username']}}" disabled="" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="text-input" class=" form-control-label">Ticket Title</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="text" id="text-input" name="title" disabled="" value="{{ task['title'] }}" class="form-control">
+                        <small class="form-text text-muted">Short title for the ticket</small>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="email-input" class=" form-control-label">Email</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input type="email" id="email-input" name="email" disabled=""
+                               value="{{ task['email'] }}" class="form-control">
+                        <small class="help-block form-text">Email for issue owner (you/others)</small>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="textarea-input" class=" form-control-label">Ticket Description</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <textarea name="description" id="textarea-input"
+                                  rows="9" disabled="" class="form-control">{{ task['description'] }}
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Category</label>
+                    </div>
+                    <div class="col col-md-9">
+                        <div class="input-group">
+                            <input type="text" id="input-category" name="input-category"
+                                   value="{{ task['category'] }}" class="form-control" disabled="">
+                            <div class="input-group-addon">
+                                User-Based
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Category</label>
+                    </div>
+                    <div class="col col-md-9">
+                        <div class="input-group">
+                            <input type="text" id="input-ai-category" name="input-ai-category"
+                                   value="{{ task['category'] }}" class="form-control" disabled="">
+                            <div class="input-group-addon">
+                                AI-Based
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Impact - AI Based</label>
+                    </div>
+                    <div class="col col-md-9">
+                        <div class="input-group">
+                            <input type="text" id="input-ai-impact" name="input-ai-impact"
+                                   value="{{ impact }}" class="form-control" disabled="">
+                            <div class="input-group-addon">
+                                AI-Based
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Urgency - AI Based</label>
+                    </div>
+                    <div class="col col-md-9">
+                        <div class="input-group">
+                            <input type="text" id="input-ai-urgency" name="input-ai-urgency"
+                                   value="{{ urgency }}" class="form-control" disabled="">
+                            <div class="input-group-addon">
+                                AI-Based
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row-lg-6">
+    <div class="card">
+        <div class="card-header">
+            <strong>Word Cloud</strong> Chart
+        </div>
+
+        <div class="au-card-inner">
+            <div id="manager-word-cloud" data-geocode='{{ word_cloud|tojson }}'></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

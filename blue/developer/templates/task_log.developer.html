@@ -1,0 +1,95 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+
+
+    </head>
+    <body>
+        <div class="container">
+
+            <h3>
+                Task Log
+                <small class="text-muted">Report your process to manager</small>
+            </h3>
+
+
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Task Desc:</label>
+                <input type="text" name="desc" class="form-control" id="input:task-desc" aria-describedby="emailHelp" placeholder="{{ task_assigned['desc'] }}" readonly>
+                <small id="emailHelp" class="form-text text-muted">Task Desc to be logged.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Product:</label>
+                <input type="text" name="product" class="form-control" id="input:task-desc" aria-describedby="emailHelp" placeholder="{{ task_assigned['product'] }}" readonly>
+                <small id="emailHelp" class="form-text text-muted">Task Product to be logged.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Category:</label>
+                <input type="text" name="category" class="form-control" id="input:task-desc" aria-describedby="emailHelp" placeholder="{{ task_assigned['category'] }}" readonly>
+                <small id="emailHelp" class="form-text text-muted">Task Category to be logged.</small>
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Project:</label>
+                <input type="text" name="project" class="form-control" id="input:task-desc" aria-describedby="emailHelp" placeholder="{{ task_assigned['project'] }}" readonly>
+                <small id="emailHelp" class="form-text text-muted">Task Category to be logged.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Specialization:</label>
+                <input type="text" name="specialization" class="form-control" id="input:task-desc" aria-describedby="emailHelp" placeholder="{{ task_assigned['specialization'] }}" readonly>
+                <small id="emailHelp" class="form-text text-muted">Task Specialization to be logged.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Planned Start Date:</label>
+                <input type="text" name="planned_sdate" class="form-control" id="input:task-desc" aria-describedby="emailHelp" placeholder="{{ task_assigned['assigned_for'][0]['planned_start_date'] }}" readonly>
+                <small id="emailHelp" class="form-text text-muted">Task Planned Date to be logged.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Planned End Date:</label>
+                <input type="text" name="planned_edate" class="form-control" id="input:task-desc" aria-describedby="emailHelp" placeholder="{{ task_assigned['assigned_for'][0]['planned_end_date'] }}" readonly>
+                <small id="emailHelp" class="form-text text-muted">Task Planned Date to be logged.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Log Day:</label>
+                <input type="date" name="log_day" class="form-control" id="input:log-day" aria-describedby="emailHelp" required>
+                <small id="emailHelp" class="form-text text-muted">Please Enter The Day You Worked On This Task.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Log Start Time:</label>
+                <input type="time" name="log_start_time" class="form-control" id="input:log-start-time" aria-describedby="emailHelp" required>
+                <small id="emailHelp" class="form-text text-muted">Please Enter The Starting Time You Worked On This Task.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Log End Time:</label>
+                <input type="time" name="log_end_time" class="form-control" id="input:log-end-time" aria-describedby="emailHelp" required>
+                <small id="emailHelp" class="form-text text-muted">Please Enter The Ending Time You Worked On This Task.</small>
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Any Comments:</label>
+                <input type="text" name="log_comments" class="form-control" id="input:comments" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">If there's any comments, hint it here.</small>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+</html>
